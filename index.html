@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Welcome back</h2>
+<p>Login to your application</p>
+
+<form onsubmit="return validateLogin()">
+    <label>Email:</label><br>
+    <input type="text" id="username"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password"><br><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<p id="error" style="color:red;"></p>
+
+<script>
+function validateLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username === "" || password === "") {
+        document.getElementById("error").innerText =
+            "Username and Password cannot be empty";
+        return false; // stop form submit
+    }
+
+    alert("Login successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>
